@@ -26,7 +26,7 @@ int main()
         y=y^arr[i];
     }
 }
-    printf("The odd occuring elements are %d and %d ",x,y);
+    printf("The non repeating elements are %d and %d ",x,y);
     return 0;
     
 }
