@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int i,n,xor=0;
+    printf("Enter the number of elements of array ");
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        xor^=arr[i];
+    }
+    for(i=0;i<n+1;i++)
+  {
+      xor^=i+1;
+  }
+ 
+
+    printf("The missing element is %d ",xor);
+    return 0;
+    
+}
