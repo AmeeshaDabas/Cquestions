@@ -1,0 +1,32 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int x=0,y=0,i,n,xor=0,set_bit;
+    printf("Enter the number of elements of array ");
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        xor^=arr[i];
+    }
+    set_bit=(xor&-xor);
+    for(i=0;i<n;i++)
+{    if(set_bit&arr[i])
+    {
+        x=x^arr[i];
+    }
+    else
+    {
+        y=y^arr[i];
+    }
+}
+    printf("The non repeating elements are %d and %d ",x,y);
+    return 0;
+    
+}
