@@ -1,0 +1,24 @@
+
+#include <stdio.h>
+int count_setbits(int n)
+{int count=0;
+while(n>0)
+{
+    count+=n&1;
+    n>>=1;
+    return count;
+}
+    
+}
+int main()
+{int a,b,n;
+printf("Enter the numbers you want to convert ");
+scanf("%d%d",&a,&b);
+n=a^b;
+int c;
+c=count_setbits(n);
+printf("The number of bits needed to swapped are %d",c);
+    
+
+    return 0;
+}
