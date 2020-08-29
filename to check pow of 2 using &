@@ -1,0 +1,23 @@
+
+
+#include <stdio.h>
+int main() {
+    // printf() displays the string inside quotation
+    int n;
+  printf("Enter a number to check ");
+  scanf("%d",&n);
+  if(n!=0)
+  {
+  if((n&(n-1))==0)
+  {
+      printf("Number is a power of 2 ");
+  }
+  else
+  printf("Not a power of 2 ");
+  }
+  else
+  {
+      printf("Number is a power of 2 ");
+  }
+    return 0;
+}
