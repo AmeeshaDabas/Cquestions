@@ -1,0 +1,20 @@
+
+
+#include <stdio.h>
+#include<math.h>
+#include<stdbool.h>
+
+int main() {
+int n;
+printf("Enter a number to check if it is a power of 2 ");
+scanf("%d",&n);
+if(floor(log2(n))==ceil(log2(n)))
+{
+    printf("The number is a power of 2 ");
+}
+else
+{
+    printf("The number is not a power of 2 ");
+}
+    return 0;
+}
