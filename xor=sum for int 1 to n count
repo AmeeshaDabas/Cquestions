@@ -1,0 +1,16 @@
+
+
+#include <stdio.h>
+int main() {
+   unsigned int n,i,c=0;
+   printf("Enter a number ");
+   scanf("%u",&n);
+   for(i=0;i<=n;i++)
+   {
+   if((n&i)==0)
+   {c++;
+   }
+   }
+   printf("The total count of positive numbers from 1 to n such that n+i=n^i is %u",c);
+    return 0;
+}
