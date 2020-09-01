@@ -1,0 +1,54 @@
+
+#include <stdio.h>
+#include<math.h>
+int convert_to_binary( int n)
+{
+    int rem,num=0,count=0,c;
+    while(n!=0)
+    {
+        rem=n%2;
+        c=(pow(10,count));
+        num+=rem*c;
+        n=n/2;
+        count++;
+    }
+    return num;
+}
+
+int set_bits(int n)
+{ int set=0,count=0;
+    while(n!=0)
+    {
+        
+        set+=pow(10,count);
+        count++;
+        n=n/10;
+    }
+    return set;
+}
+int bin_to_dec(int n)
+{
+    int count=0,rem,num=0;
+    while(n!=0)
+    {
+        rem=n%10;
+        num+=rem*pow(2,count);
+        count++;
+        n=n/10;
+    }
+    return num;
+}
+int main() {
+    int n,value,flip;
+    printf("Enter a number to flip its bits ");
+    scanf("%d",&n);
+    int num;
+   num=convert_to_binary(n);
+   value=set_bits(num);
+   flip=value-num;
+   int f;
+   f=bin_to_dec(flip);
+   printf("After flipping the bits the number is %d\n",f);
+    
+    return 0;
+}
