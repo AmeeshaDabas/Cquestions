@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+#include<stdlib.h>
+#include<math.h>
+int msd(int n)
+{
+    if(n==0)
+    {return 0;}
+    else
+    {
+        n=n/2;
+        int msd=0;
+        while(n!=0)
+        {
+            n=n/2;
+            msd++;
+        }
+        return pow(2,msd);
+    }
+}
+int main()
+{
+   int n;
+   printf("Enter the value of n ");
+   scanf("%d",&n);
+   int num;
+   num=msd(n);
+   printf("The most significant set bit is %d ",num);
+    return 0;
+}
