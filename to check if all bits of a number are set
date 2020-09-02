@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+int all_bits_are_set(int n)
+{
+    if(n==0)
+    return 0;
+    
+     if((n&(n+1))==0)
+        {return 1;}
+        else
+        return 0;
+}
+int main()
+{
+int n;
+printf("Enter a number to check ");
+scanf("%d",&n);
+if(all_bits_are_set(n))
+{
+    printf("All bits are set ");
+}
+else
+printf("All bits are not set ");
+
+
+    return 0;
+}
