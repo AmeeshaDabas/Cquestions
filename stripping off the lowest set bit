@@ -1,0 +1,15 @@
+
+#include <stdio.h>
+int stripping_off_lowest_set_bit(int n)
+{
+    n=n&(n-1);
+    return n;
+}
+int main()
+{
+int n;
+printf("Enter a number to check ");
+scanf("%d",&n);
+printf("After stripping off the lowest set bit the number becomes %d",stripping_off_lowest_set_bit(n));
+    return 0;
+}
