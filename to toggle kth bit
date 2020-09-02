@@ -1,0 +1,16 @@
+
+#include <stdio.h>
+int toggle_bit(int n,int pos)
+{
+    n^=(1<<pos);
+    return n;
+}
+int main()
+{  int n,pos;
+    printf("Enter a number to check ");
+    scanf("%d",&n);
+    printf("Enter the position of bit you want to toggle ");
+    scanf("%d",&pos);
+    printf("The number obtained after flipping %d is %d ",pos,toggle_bit(n,pos));
+    return 0;
+}
