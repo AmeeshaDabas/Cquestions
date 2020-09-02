@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include<stdlib.h>
+int all_bits_are_set(int n)
+{
+  while(n>0)
+  { int temp=n&1;
+      if(temp==0)
+      {return 0;}
+     n= n>>1;
+  }
+  return 1;
+  
+}
+int main() 
+{
+    int n;
+  printf("Enter a number to check ");
+  scanf("%d",&n);
+  int num=n^(n>>1);
+  if(all_bits_are_set(num))
+  {
+      printf("\nBits of %d have alternate pattern ",n);
+  }
+  else
+  {
+      printf("Bits are not in alternate pattern ");
+  }
+	return 0;
+}
