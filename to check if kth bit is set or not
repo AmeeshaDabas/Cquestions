@@ -1,0 +1,24 @@
+
+#include <stdio.h>
+int check_bit(int n,int pos)
+{
+  int bit=n&(1<<pos);
+   return bit; 
+}
+int main()
+{
+    int n,pos;
+    printf("Enter the number ");
+    scanf("%d",&n);
+    printf("Enter the position of bit you want to check ");
+    scanf("%d",&pos);
+   if(check_bit(n,pos))
+   {
+       printf("The bit at %d position is set ",pos);
+   }
+   else
+   {
+       printf("The bit at %d position is not set ",pos);
+   }
+    return 0;
+}
