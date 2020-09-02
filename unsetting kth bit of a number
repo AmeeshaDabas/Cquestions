@@ -1,0 +1,17 @@
+
+#include <stdio.h>
+int unset_kth_bit(int num, int pos)
+{
+    num&=(~(1<<pos));
+    return num;
+}
+int main()
+{   int n,pos;
+    printf("Enter a number ");
+    scanf("%d",&n);
+    printf("Enter the position of bit you want to unset ");
+    scanf("%d",&pos);
+    printf("The number obtained after setting %d bit is %d ",pos,unset_kth_bit(n,pos));
+
+    return 0;
+}
