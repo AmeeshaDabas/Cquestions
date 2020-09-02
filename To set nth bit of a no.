@@ -1,0 +1,19 @@
+
+#include <stdio.h>
+int set_kth_bet(int n, int pos)
+{
+    n|=1<<pos;
+  
+    return n;
+}
+int main()
+{
+  int n,pos;
+  printf("Enter a number ");
+  scanf("%d",&n);
+  printf("Enter the position of bit you want to set ");
+  scanf("%d",&pos);
+  printf("After setting %d, the number becomes %d",pos,set_kth_bet(n,pos));
+
+    return 0;
+}
