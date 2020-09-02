@@ -1,0 +1,16 @@
+
+#include <stdio.h>
+int get_lowest_set_bit(int n)
+{
+    n=n&-n;
+    return n;
+}
+int main()
+{
+    int n;
+    printf("Enter the value of n ");
+    scanf("%d",&n);
+    printf("The lowest set bit is %d",get_lowest_set_bit(n));
+
+    return 0;
+}
