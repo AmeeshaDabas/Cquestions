@@ -1,0 +1,20 @@
+
+#include <stdio.h>
+int count_set_bits(int n)
+{   int count=0;
+    while(n)
+    {
+        n&=n-1;
+        count++;
+    }
+    return count;
+}
+int main()
+{
+    int n;
+    printf("Enter the value of n ");
+    scanf("%d",&n);
+    printf("The number of set bits are %d",count_set_bits(n));
+
+    return 0;
+}
