@@ -1,0 +1,18 @@
+
+#include <stdio.h>
+#define Macro(num,str)({\
+ printf("%d ",num);\
+ printf("is ");\
+ printf("%s",str);\
+})
+int main()
+{   int n;
+    printf("Enter a number to check ");
+    scanf("%d",&n);
+    if(n&1==1)
+    Macro(n,"Odd");
+    else
+    Macro(n,"Even");
+
+    return 0;
+}
