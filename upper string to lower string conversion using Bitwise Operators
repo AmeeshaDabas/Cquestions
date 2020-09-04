@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include<string.h>
+char* convert_to_lowercase (char *arr)
+{
+ char ch = ' ';
+ for (int i = 0; i < strlen (arr); i++)
+   {
+      arr[i]|= ch;
+   }
+ return arr;
+}
+
+char* convert_to_uppercase (char *arr)
+{
+ char ch = ' ';
+ for (int i = 0; i < strlen (arr); i++)
+   {
+     arr[i]&= ~ch;
+   }
+ return arr;
+}
+
+int main ()
+{
+ char arr[100];
+ int ch;
+ printf ("Enter a string to convert in uppercase or lowercase ");
+ scanf ("%s", arr);
+ printf("Enter your choice: (1 for lowercase and 2 for uppercase conversion ");
+ scanf ("%d", &ch);
+ if (ch ==1)
+   {
+     printf ("After conversion to lowercase the string is %s ", convert_to_lowercase(arr));
+   }
+  if (ch ==2)
+   {
+     printf ("After conversion to uppercase the string is %s ", convert_to_uppercase(arr));
+   }
+ else
+   {
+     printf ("Invalid choice entered ");
+   }
+
+ return 0;
+}
