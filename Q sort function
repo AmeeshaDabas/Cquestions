@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+int comp_func(const void *x,void *y)
+{
+   int *xx, *yy;
+   xx=(int*)x;
+   yy=(int*)y;
+   int res;
+   res=*xx-*yy;
+}
+int main()
+{int n;
+printf("Enter the number of elements of array ");
+scanf("%d",&n);
+int i,arr[n];
+printf("Start entering the elements of array one by one ");
+for(i=0;i<n;i++)
+{
+    scanf("%d",&arr[i]);
+}
+qsort(arr,n,sizeof(int),comp_func);
+printf("After sorting ");
+for(i=0;i<n;i++)
+{
+    printf("%d ",arr[i]);
+}
+
+
+    return 0;
+}
