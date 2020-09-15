@@ -1,0 +1,27 @@
+
+#include <stdio.h>
+#include<stdlib.h>
+
+int main()
+{ int n;
+printf("Enter a number to check if its odd or even ");
+scanf("%d",&n);
+char arr[2][5]={"Even","Odd"};
+printf(arr[n%2]);
+    
+
+    return 0;
+}
+/*
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n;
+    printf("Enter a number to check if its odd or even ");
+    scanf("%d",&n);
+    (n&1 && printf("Odd")||printf("Even") );
+    
+    return 0;
+}
+*/
