@@ -2,7 +2,7 @@
 #include <stdio.h>
 int count_len_of_str(int n,char *str)
 {
-    if(str[n]==0)
+    if(str[n]=='\0')
     {
         return n;
     }
