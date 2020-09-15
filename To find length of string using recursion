@@ -1,0 +1,21 @@
+
+#include <stdio.h>
+int count_len_of_str(int n,char *str)
+{
+    if(str[n]==0)
+    {
+        return n;
+    }
+    else
+    count_len_of_str(n+1,str);
+}
+
+int main()
+{
+    char str[300];
+    printf("Enter a string to find its length ");
+    scanf("%s",str);
+    printf("The length of string is %i",count_len_of_str(0,str));
+
+    return 0;
+}
