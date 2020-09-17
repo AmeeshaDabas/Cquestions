@@ -1,0 +1,74 @@
+
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<ctype.h>
+int validate_num(char *str)
+{
+    for(int i=0;i<strlen(str);i++)
+    {
+        if(str[i]<'0' || str[i]>'9')
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+int leading_zero(char *s)
+{   int n;
+    n=atoi(s);
+    if(n>0 && s[0]=='0')
+    return 1;
+    else
+    return 0;
+
+}
+int validate_ip(char *str)
+{    int i,num,dots=0;
+    char *p;
+    if(str==NULL)
+    return 0;
+    for(i=0;i<strlen(str);i++)
+    {
+        if(str[i]=='.')
+        {
+            dots++;
+        }
+    }
+    if(dots!=3)
+    return 0;
+    p=strtok(str,".");
+    if(p==NULL)
+    return 0;
+    while(p)
+    {
+        if(!validate_num(p))
+        return 0;
+        if(leading_zero(p))
+        return 0;
+        
+        num=atoi(p);
+         
+        if(num>=0 && num<=255)
+                {
+                  p=strtok(NULL,".");
+                   
+                }
+             else 
+             return 0;
+    }
+    return 1;
+}
+int main()
+{
+    char str[300];
+    printf("Enter an IP address to check ");
+    scanf("%s",str);
+    if(validate_ip(str))
+    {
+        printf("\nValid IP address");
+    }
+    else 
+    printf("\nInvalid IP address");
+    return 0;
+}
