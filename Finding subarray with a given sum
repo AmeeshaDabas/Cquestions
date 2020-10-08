@@ -1,0 +1,40 @@
+#include <stdio.h>
+int find(int arr[],int n,int sum)
+{
+ int i,s;
+ for(i=0;i<n;i++)
+ {
+     s=arr[i];
+     for(int j=i+1;j<=n;j++)
+     {
+         if(sum==s)
+         {
+             printf("%d %d\n",i+1,j);
+             return 1;
+         }
+         
+         if(s>sum || j==n)
+         break;
+         s=s+arr[j];
+     }
+ }
+ printf("-1\n");
+ return 0;
+}
+
+int main() {
+	int t,n,s;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    scanf("%d%d",&n,&s);
+	    int arr[n];
+	    for(int i=0;i<n;i++)
+	    {
+	        scanf("%d",&arr[i]);
+	    }
+	     find(arr,n,s) ;
+	}
+	
+	return 0;
+}
