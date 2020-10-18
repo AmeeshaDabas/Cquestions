@@ -1,0 +1,48 @@
+#include <stdio.h>
+struct interval
+{
+    int buy,sell;
+};
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,i,count=0;
+	    scanf("%d",&n);
+	    int arr[n];
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%d",&arr[i]);
+	    }
+	   struct interval a[n/2+1];
+	   i=0;
+	   while(i<n-1)
+	   {
+	       while((i<n-1) && (arr[i+1]<=arr[i]))
+	       i++;
+	       if(i==n-1)
+	       break;
+	       a[count].buy=i++;
+	       while((i<n) && arr[i-1]<=arr[i])
+	       i++;
+	       a[count].sell=i-1;
+	       count++;
+	   }
+	   if(count==0)
+	   {
+	       printf("No Profit\n");
+	   }
+	   else
+	   {
+	       for(i=0;i<count;i++)
+	       {
+	           printf("(%d %d) ",a[i].buy,a[i].sell);
+	       }
+	       printf("\n");
+	   }
+	   
+	    
+	}
+	return 0;
+}
