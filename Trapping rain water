@@ -1,0 +1,56 @@
+#include <stdio.h>
+int min(int a, int b)
+{
+    if(a>b)
+    {
+        return b;
+    }
+    else
+    {
+        return a;
+    }
+}
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int l,r,i,j,n,sum=0;
+	    scanf("%d",&n);
+	    int arr[n];
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%d",&arr[i]);
+	    }
+	    
+	    for(i=1;i<n-1;i++)
+	    {
+	        l=arr[0],r=arr[n-1];
+	        for(j=0;j<i;j++)
+	        {
+	            if(arr[j]>l)
+	            {
+	                l=arr[j];
+	            }
+	        }
+	        for(j=i+1;j<n;j++)
+	        {
+	            if(arr[j]>r)
+	            {
+	                r=arr[j];
+	            }
+	        }
+	     
+	        int p=min(l,r);
+	 
+	        if(p>=arr[i])
+	        {
+	            sum+=(p-arr[i]);
+	        }
+	        
+	    }
+	    
+	   printf("%d\n",sum);
+	}
+	return 0;
+}
