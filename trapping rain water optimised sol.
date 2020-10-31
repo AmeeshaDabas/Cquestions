@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include<stdlib.h>
+int main() {
+	//code
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,i,j,ans=0;
+	    scanf("%d",&n);
+	    int arr[n];
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%d",&arr[i]);
+	    }
+	    int l=0,r=n-1,left_max=arr[0],right_max=arr[n-1];
+	    while(l<r)
+	    {
+	        if(arr[l]<arr[r])
+	        {
+	        if(arr[l]>=left_max)
+	        {
+	            left_max=arr[l];
+	        }
+	        else
+	        {
+	        ans+=left_max-arr[l];
+	        }
+	        l++;
+	        }
+	        else
+	        {
+	        if (arr[r]>=right_max)
+	        {
+	            right_max=arr[r];
+	        }
+	        else
+	        {
+	            ans+=right_max-arr[r];
+	        }
+	        r--;
+	        }
+	    }
+	
+	    printf("%d\n",ans);
+	    
+	}
+	return 0;
+}
