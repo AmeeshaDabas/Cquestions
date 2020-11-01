@@ -2,7 +2,6 @@
 
 #include <stdio.h>
 int main() {
-    // printf() displays the string inside quotation
     int n;
   printf("Enter a number to check ");
   scanf("%d",&n);
