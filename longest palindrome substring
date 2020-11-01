@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include<string.h>
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    char str[10000];
+	    scanf("%s",str);
+	     int i,j,maxlen=1,start=0;
+	     int arr[strlen(str)][strlen(str)];
+	     for(i=0;i<strlen(str);i++)
+	     {
+	         for(j=0;j<strlen(str);j++)
+	         {
+	             arr[i][j]=0;
+	         }
+	     }
+	   
+	    for(i=0;i<strlen(str);i++)
+	    {
+	       arr[i][i]=1;
+	    }
+	    
+	   for(i=0;i<(strlen(str)-1);i++)
+	    {
+	        if(str[i]==str[i+1])
+	        {
+	            arr[i][i+1]=1;
+	            if(start==0)
+	            {
+	            start=i;
+	            }
+	            maxlen=2;
+	        }
+	    }
+	    for(int k=3;k<=strlen(str);k++)
+	    {
+	        for(i=0;i<(strlen(str)-k+1);i++)
+	        {
+	            j=i+k-1;
+	            if(str[i]==str[j] && arr[i+1][j-1]==1)
+	            {
+	                arr[i][j]=1;
+	                if(k>maxlen)
+	                {
+	                maxlen=k;
+	                 start=i;
+	                }
+	            }
+	        }
+	        
+	    }
+	    //printf("%d %d",start,maxlen);
+	    
+	    for(i=start;i<=(start+maxlen-1);i++)
+	    {
+	        printf("%c",str[i]);
+	    }
+	    printf("\n");
+	   
+	    
+	}
+	
+	    	return 0;
+
+}
