@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<stdlib.h>
+void rev(int n, int arr[],int k)
+{
+   for(int i=0;i<n;i+=k)
+	    {
+	        int n1=i,n2;
+	        if(i+k-1>n-1)
+	       {
+	           n2=n-1;
+	       }
+	       else
+	        n2=i+k-1;
+	         int temp;
+             
+                  while(n1<n2)
+                   {
+                        temp=arr[n1];
+                        arr[n1]=arr[n2];
+                        arr[n2]=temp;
+                        n1++;
+                        n2--;
+                    }
+	    }
+}
+
+int main() 
+{
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,i,k,n1,n2;
+	    scanf("%d %d",&n,&k);
+	    int arr[n];
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%d",&arr[i]);
+	    }
+	    rev(n,arr,k);
+	       
+	         for( i=0;i<n;i++)
+	        {
+	            printf("%d ",arr[i]);
+	        }
+	        printf("\n");
+	        
+	}
+	return 0;
+}
+	
