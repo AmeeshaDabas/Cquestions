@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,temp;
+	    scanf("%d",&n);
+	    long long arr[n],i,j;
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%lld",&arr[i]);
+	    }
+        int max=n-1, me=arr[n-1]+1, min=0;
+        for(i=0;i<n;i++)
+        {
+            if(i%2==0)
+            {
+            arr[i]+=(arr[max]%me) *me;
+            max--;
+            }
+            else
+            {
+            arr[i]+=(arr[min]%me) *me;
+            min++;
+            }
+        }
+        for(i=0;i<n;i++)
+        {
+           arr[i]= arr[i]/me;
+        }
+        for(i=0;i<n;i++)
+        {
+            printf("%d ",arr[i]);
+        }
+       printf("\n");
+	}
+	return 0;
+}
