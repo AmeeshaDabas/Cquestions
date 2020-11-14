@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include<stdlib.h>
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,sum,c=0;
+	    scanf("%d",&n);
+	    int i,j,k,l, arr[n];
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%d",&arr[i]);
+	    }
+	    scanf("%d",&sum);
+	    for(i=0;i<n;i++)
+	    {
+	        for(j=i+1;j<n;j++)
+	        {
+	            for(k=j+1;k<n;k++)
+	            {
+	                for(l=k+1;l<n;l++)
+	                {
+	                    if(arr[i]+arr[j]+arr[k]+arr[l]==sum)
+	                    {
+	                      c++;
+	                    }
+	                }
+	            }
+	        }
+	    }
+	    if(c==0)
+	    {
+	        printf("0\n");
+	    }
+	    else
+	    {
+	        printf("1\n");
+	    }
+	}
+	return 0;
+}
