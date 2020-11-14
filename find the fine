@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	   int n,d,i,fine=0;
+	   scanf("%d%d",&n,&d);
+	   int c[n],p[n];
+	   for(i=0;i<n;i++)
+	   {
+	       scanf("%d",&c[i]);
+	   }
+	   for(i=0;i<n;i++)
+	   {
+	       scanf("%d",&p[i]);
+	   }
+	   if(d%2==0)
+	   {
+	       for(i=0;i<n;i++)
+	       {
+	           if((c[i]%2)!=0)
+	           {
+	               fine+=p[i];
+	           }
+	       }
+	   }
+	   else
+	    {
+	       for(i=0;i<n;i++)
+	       {
+	           if(c[i]%2==0)
+	           {
+	               fine+=p[i];
+	           }
+	       }
+	   }
+	   printf("%d\n",fine);
+	}
+	return 0;
+}
