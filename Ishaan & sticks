@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	 int n,i;
+	 scanf("%d",&n);
+	 int arr[n];
+	 for(i=0;i<n;i++)
+	 {
+	     scanf("%d",&arr[i]);
+	 }
+	 int count[1001];
+	 for(i=0;i<1001;i++)
+	 {
+	     count[i]=0;
+	 }
+	 for(i=0;i<n;i++)
+	 {
+	     count[arr[i]]++;
+	 }
+	 int max_num=0,max_side=-1;
+	 for(i=0;i<1001;i++)
+	 {
+	     if(count[i]>=4 && max_side<i)
+	     {
+	         max_side=i;
+	         max_num=count[i];
+	     }
+	 }
+	 if(max_side==-1)
+	 {
+	     printf("-1\n");
+	 }
+	 else
+	 {
+	     printf("%d %d\n",(max_side*max_side),(max_num/4));
+	 }
+	}
+	return 0;
+}
