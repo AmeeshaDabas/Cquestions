@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,k,i;
+	    scanf("%d %d",&n,&k);
+	    int up[k];
+	    for(i=0;i<k;i++)
+	    {
+	        scanf("%d",&up[i]);
+	    }
+	    int arr[n+1];
+	    for(i=1;i<=n;i++)
+	    {
+	        arr[i]=0;
+	    }
+	    while(k--)
+	    {
+	        for(i=1;i<=n;i++)
+	        {
+	            if(i>=up[k])
+	            {
+	                arr[i]++;
+	            }
+	        }
+	    }
+	    for(i=1;i<=n;i++)
+	    {
+	        printf("%d ",arr[i]);
+	    }
+	    printf("\n");
+	}
+	return 0;
+}
