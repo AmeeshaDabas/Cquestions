@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    long long int n,k,i;
+	    scanf("%lld %lld",&n,&k);
+	    long long int arr[n];
+	    for(i=0;i<n;i++)
+	    {
+	        scanf("%lld",&arr[i]);
+	    }
+	    long long int c=0;
+	    for(i=0;i<n;i++)
+	    {
+	        if(arr[i]>k)
+	        {
+	         while(arr[i]>k)
+	         {
+	             arr[i]=arr[i]-k;
+	             c++;
+	         }
+	        }
+	    }
+	    printf("%lld\n",c);
+	}
+	return 0;
+}
