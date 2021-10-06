@@ -15,14 +15,20 @@ int main() {
 	    long long int c=0;
 	    for(i=0;i<n;i++)
 	    {
-	        if(arr[i]>k)
-	        {
-	         while(arr[i]>k)
+	         if(arr[i]>k)
 	         {
-	             arr[i]=arr[i]-k;
-	             c++;
+	             int m;
+	             if(arr[i]%k==0)
+	             {
+	                m=(arr[i]/k)-1; 
+	             }
+	             else
+	             {
+	             m=arr[i]/k;
+	             }
+	             c+=m;
 	         }
-	        }
+	    
 	    }
 	    printf("%lld\n",c);
 	}
